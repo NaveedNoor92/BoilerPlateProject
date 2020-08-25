@@ -39,6 +39,7 @@ import { EditUserDialogComponent } from '@app/users/edit-user/edit-user-dialog.c
 import { ChangePasswordComponent } from './users/change-password/change-password.component';
 import { ResetPasswordDialogComponent } from './users/reset-password/reset-password.component';
 import { PagedetailsComponent } from './pagedetails/pagedetails.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,9 @@ import { PagedetailsComponent } from './pagedetails/pagedetails.component';
     AppRoutingModule,
     ServiceProxyModule,
     SharedModule,
-    NgxPaginationModule
+      NgxPaginationModule,
+      FroalaEditorModule.forRoot(),
+      FroalaViewModule.forRoot()
   ],
   providers: [],
   entryComponents: [

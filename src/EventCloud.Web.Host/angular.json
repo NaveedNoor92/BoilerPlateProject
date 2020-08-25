@@ -42,7 +42,9 @@
               "src/bsb-theme/css/materialize.css",
               "src/bsb-theme/css/style.css",
               "src/bsb-theme/css/themes/all-themes.css",
-              "src/shared/core.less"
+              "src/shared/core.less",
+              "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -79,7 +81,8 @@
               "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
               "src/bsb-theme/js/admin.js",
               "src/bsb-theme/js/demo.js",
-              "src/bsb-theme/js/jquery.validate.js"
+              "src/bsb-theme/js/jquery.validate.js",
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ]
           },
           "configurations": {
@@ -171,7 +174,8 @@
               "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js",
               "src/bsb-theme/js/admin.js",
               "src/bsb-theme/js/demo.js",
-              "src/bsb-theme/js/jquery.validate.js"
+              "src/bsb-theme/js/jquery.validate.js",
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ],
             "styles": [
               "src/assets/fonts/roboto/roboto.css",
@@ -184,7 +188,10 @@
               "src/bsb-theme/css/materialize.css",
               "src/bsb-theme/css/style.css",
               "src/bsb-theme/css/themes/all-themes.css",
-              "src/shared/core.less"
+              "src/shared/core.less",
+
+              "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "assets": [
               "src/assets",

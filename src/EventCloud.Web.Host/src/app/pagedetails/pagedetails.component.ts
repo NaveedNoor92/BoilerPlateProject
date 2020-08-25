@@ -14,8 +14,6 @@ import {
     CMSDto
 } from '@shared/service-proxies/service-proxies';
 
-
-
 @Component({
     selector: 'app-pagedetails',
     templateUrl: './pagedetails.component.html',

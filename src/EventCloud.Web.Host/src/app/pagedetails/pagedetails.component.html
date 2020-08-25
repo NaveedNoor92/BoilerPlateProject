@@ -1,3 +1,4 @@
+
 <form autocomplete="off" #editUserModal="ngForm" (ngSubmit)="onSaveClick()">
     <h1 mat-dialog-title>{{ "Edit CMS" | localize }}</h1>
     <mat-dialog-content style="width:800px;height:250px;">
@@ -7,36 +8,37 @@
                 <div class="row-fluid">
                     <div class="col-md-6">
 
+
                         <mat-form-field>
                             <input matInput
                                    name="PageName"
                                    [placeholder]="'PageName' | localize"
                                    [(ngModel)]="pageName"
                                    required
-            
                                    minlength="2"
                                    maxlength="32" />
                         </mat-form-field>
-                        <mat-form-field>
-                            <input matInput
-                                   name="Data"
-                                
-                                   [placeholder]="'Data' | localize"
-                                   [(ngModel)]="htmlContent"
-                                   required
-                                   maxlength="32" />
-                        </mat-form-field>
+                     
 
-                        <!--<button mat-button 
-                                mat-flat-button
-                                flex="15"
-                                color="primary"
-                                type="button"
-                                (click)="editPage(false)">
-                            {{ "Edit" | localize }}
-                        </button>-->
+                        <textarea [froalaEditor]
+                                  name="Data"
+                                  [placeholder]="'Data' | localize"
+                                  required
+                                  minlength="2"
+                                  maxlength="50"
+                                  [(ngModel)]="htmlContent">
+                    </textarea>
 
 
+
+                        <!--<button mat-button
+            mat-flat-button
+            flex="15"
+            color="primary"
+            type="button"
+            (click)="editPage(false)">
+        {{ "Edit" | localize }}
+    </button>-->
                         <!--<div class="checkbox-wrapper">
         <mat-checkbox name="IsActive" [(ngModel)]="inedit">
             {{ "inedit" | localize }}
@@ -49,7 +51,7 @@
 
         </mat-tab-group>
     </mat-dialog-content>
-    <div mat-dialog-actions  align="end">
+    <div mat-dialog-actions align="end">
         <button mat-button type="button" [disabled]="saving" (click)="close(false)">
             {{ "Cancel" | localize }}
         </button>
@@ -57,7 +59,7 @@
                 type="submit"
                 flex="15"
                 color="primary"
-                [disabled]="!editUserModal.form.valid || saving">
+>
             {{ "Save" | localize }}
         </button>
     </div>
