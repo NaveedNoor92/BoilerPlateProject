@@ -783,7 +783,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     update(input: CMSDto | null | undefined): Observable<CMSDto> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/Update";
+        let url_ = this.baseUrl + "/api/services/app/CMS/InsertOrUpdateCMSContent?";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(input);
@@ -798,7 +798,7 @@ export class CMSServiceProxy {
             })
         };
 
-        return this.http.request("put", url_, options_).pipe(_observableMergeMap((response_: any) => {
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_: any) => {
             return this.processUpdate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
@@ -940,7 +940,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     getCMSForEdit(id: number | null | undefined): Observable<GetCMSForEditOutput> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/GetCMSForEdit?";
+        let url_ = this.baseUrl + "/api/services/app/CMS/GetCMSContent?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&";
         url_ = url_.replace(/[?&]$/, "");
@@ -994,7 +994,7 @@ export class CMSServiceProxy {
      * @return Success
      */
     get(id: number | null | undefined): Observable<CMSDto> {
-        let url_ = this.baseUrl + "/api/services/app/CMS/Get?";
+        let url_ = this.baseUrl + "/api/services/app/CMS/GetCMSContent?";
         if (id !== undefined)
             url_ += "Id=" + encodeURIComponent("" + id) + "&";
         url_ = url_.replace(/[?&]$/, "");
@@ -1032,7 +1032,9 @@ export class CMSServiceProxy {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
                 let result200: any = null;
                 let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+                console.log(resultData200);
                 result200 = CMSDto.fromJS(resultData200);
+                console.log(result200);
                 return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {

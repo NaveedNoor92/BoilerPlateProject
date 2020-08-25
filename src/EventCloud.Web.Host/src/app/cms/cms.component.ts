@@ -22,6 +22,9 @@ class PagedCMSRequestDto extends PagedRequestDto {
     animations: [appModuleAnimation()]
 })
 export class CMSComponent extends PagedListingComponentBase<CMSDto> {
+    protected delete(entity: CMSDto): void {
+        throw new Error("Method not implemented.");
+    }
 
     cmspages: CMSDto[] = [];
 
@@ -58,6 +61,30 @@ export class CMSComponent extends PagedListingComponentBase<CMSDto> {
     }
 
 
+    //createCMS(): void {
+    //    this.showCreateOrEditRoleDialog();
+    //}
+
+    //editCMS(role: CMSDto): void {
+    //    this.showCreateOrEditRoleDialog(role.id);
+    //}
+
+    //showCreateOrEditRoleDialog(id?: number): void {
+    //    let createOrEditRoleDialog;
+    //    if (id === undefined || id <= 0) {
+    //        createOrEditRoleDialog = this._dialog.open(CreateCMSDialogComponent);
+    //    } else {
+    //        createOrEditRoleDialog = this._dialog.open(EditCMSDialogComponent, {
+    //            data: id
+    //        });
+    //    }
+
+    //    createOrEditRoleDialog.afterClosed().subscribe(result => {
+    //        if (result) {
+    //            this.refresh();
+    //        }
+    //    });
+    //}
 
 
 

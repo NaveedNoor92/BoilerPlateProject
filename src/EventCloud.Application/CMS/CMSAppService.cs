@@ -19,6 +19,7 @@ namespace EventCloud.CMS
 
         public Task<CMSDto> GetCMSContent(EntityDto<int> PageId)
         {
+            var test = base.Get(PageId);
             return base.Get(PageId);
         }
 
